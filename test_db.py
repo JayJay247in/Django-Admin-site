@@ -1,7 +1,7 @@
-import psycopg # type: ignore
+import psycopg2
 
 try:
-    conn = psycopg.connect(
+    conn = psycopg2.connect(
         host="127.0.0.1",
         port=5000,
         user="postgres",
@@ -10,5 +10,5 @@ try:
     )
     print("Connection Successful")
     conn.close()
-except psycopg.Error as e:
+except psycopg2.Error as e:
     print(f"Connection Error: {e}")
